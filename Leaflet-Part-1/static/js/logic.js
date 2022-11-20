@@ -106,9 +106,10 @@ function createMap(earthquakes){
     legend.onAdd = function() {
         let div = L.DomUtil.create("div", "info legend"), 
         Earthquake_grades = [0, 10, 30, 50, 70, 90];
+        legendInfo = "<h3>Magnitude</h3>";
 
-        div.innerHTML += "<h3>Magnitude</h3>"
-
+        div.innerHTML = legendInfo;
+        // loop to generate a label for each interval
         for (let i = 0; i < Earthquake_grades.length; i++) {
             div.innerHTML +=
                 '<i style="background: ' + markercolours(Earthquake_grades[i] + 1) + '"></i> ' +
